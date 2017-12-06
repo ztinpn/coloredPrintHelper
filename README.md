@@ -3,7 +3,7 @@
 
 # 用法
 
-需要JAVA运行时环境支持，可到 http://rj.baidu.com/soft/detail/10463.html 下载
+需要JAVA运行时环境支持，可到 http://rj.baidu.com/soft/detail/10463.html 下载并安装
 
 下载 https://github.com/ztinpn/coloredPrintHelper/archive/master.zip 并解压，把待处理的pdf文件拷到coloredPrintHelper.jar和process.bat的同文件夹下，记事本打开process.bat，把 "pdf文件名.pdf" 修改为对应的pdf文件名，保存。
 
