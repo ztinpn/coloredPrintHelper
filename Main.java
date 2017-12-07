@@ -79,6 +79,19 @@ public class Main {
                         grayDoc.addPage(onePage2);
                     }
                 }
+                if ((pagesNum & 1) == 1) {
+                    int idx = pagesNum - 1;
+                    PDPage onePage = document.getPage(idx);
+                    System.out.println(String.format("processing the %d page..", idx + 1));
+                    BufferedImage pdfImage = renderer.renderImageWithDPI(idx, 200 / 4); // Windows native DPI
+                    if (isColored(pdfImage)) {
+                        coloredNums.add(idx + 1);
+                        coloredDoc.addPage(onePage);
+                    } else {
+                        grayNums.add(idx + 1);
+                        grayDoc.addPage(onePage);
+                    }
+                }
             }
             String printMode = isOneSide?"_单面打印":"_双面打印";
             coloredDoc.save(fileName + "_彩色部分" + printMode + ".pdf");
