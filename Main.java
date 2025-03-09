@@ -52,10 +52,10 @@ public class Main {
                     BufferedImage pdfImage = renderer.renderImageWithDPI(i, 200 / 4); // Windows native DPI
                     if (isColored(pdfImage)) {
                         coloredNums.add(i + 1);
-                        coloredDoc.addPage(onePage);
+                        coloredDoc.importPage(onePage);
                     } else {
                         grayNums.add(i + 1);
-                        grayDoc.addPage(onePage);
+                        grayDoc.importPage(onePage);
                     }
                 }
             } else {//双面打印时，需要两页两页考虑
@@ -70,13 +70,13 @@ public class Main {
                     if (isColored(pdfImage1) || isColored(pdfImage2)) {
                         coloredNums.add(idx1 + 1);
                         coloredNums.add(idx2 + 1);
-                        coloredDoc.addPage(onePage1);
-                        coloredDoc.addPage(onePage2);
+                        coloredDoc.importPage(onePage1);
+                        coloredDoc.importPage(onePage2);
                     } else {
                         grayNums.add(idx1 + 1);
                         grayNums.add(idx2 + 1);
-                        grayDoc.addPage(onePage1);
-                        grayDoc.addPage(onePage2);
+                        grayDoc.importPage(onePage1);
+                        grayDoc.importPage(onePage2);
                     }
                 }
                 if ((pagesNum & 1) == 1) {
@@ -86,10 +86,10 @@ public class Main {
                     BufferedImage pdfImage = renderer.renderImageWithDPI(idx, 200 / 4); // Windows native DPI
                     if (isColored(pdfImage)) {
                         coloredNums.add(idx + 1);
-                        coloredDoc.addPage(onePage);
+                        coloredDoc.importPage(onePage);
                     } else {
                         grayNums.add(idx + 1);
-                        grayDoc.addPage(onePage);
+                        grayDoc.importPage(onePage);
                     }
                 }
             }
